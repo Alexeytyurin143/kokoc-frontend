@@ -18,14 +18,15 @@ jobs:
                   npm install
                   npm run build
 
+            - name: Remove Previous Build
+              run: rm -rf /var/www/dist
+
             - name: Copy files to Server
               uses: appleboy/scp-action@master
               with:
                   host: ${{ secrets.SERVER_IP }}
                   username: ${{ secrets.SERVER_USERNAME }}
                   key: ${{ secrets.SERVER_SSH_KEY }}
-                  script: |
-                      rm -rf /var/www/dist
                   source: 'dist/'
                   target: '/var/www/'
 
