@@ -1,0 +1,31 @@
+.register {
+    &__title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__noAccount {
+        display: flex;
+        align-items: flex-end;
+
+        &__title {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+    }
+}
+
+.registerForm {
+    &__container {
+        margin-top: 20px;
+
+        .description {
+            margin-bottom: 10px;
+        }
+    }
+}

@@ -1,0 +1,22 @@
+.stepsBlock {
+    font-weight: 700;
+    & div {
+        font-size: 32px;
+    }
+}
+
+.header {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.todayMoney {
+    color: #aaa;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 50px;
+    & span {
+        color: #000;
+    }
+}

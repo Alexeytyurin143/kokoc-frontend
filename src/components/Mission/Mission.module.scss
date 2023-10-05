@@ -1,0 +1,30 @@
+.mission {
+    background-color: #fedf6b;
+    padding: 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    height: 325px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+
+
+    &__title {
+        font-size: 32px;
+    }
+
+    &__prize {
+        font-size: 24px;
+    }
+
+    &__click {
+        color: grey;
+    }
+}
+
+.mission__icon {
+    width: 70px;
+    align-self: flex-end;
+}
