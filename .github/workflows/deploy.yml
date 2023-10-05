@@ -24,6 +24,8 @@ jobs:
                   host: ${{ secrets.SERVER_IP }}
                   username: ${{ secrets.SERVER_USERNAME }}
                   key: ${{ secrets.SERVER_SSH_KEY }}
+                  script: |
+                      rm -rf /var/www/dist
                   source: 'dist/'
                   target: '/var/www/'
 
