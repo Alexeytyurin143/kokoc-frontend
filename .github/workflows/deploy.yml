@@ -25,7 +25,7 @@ jobs:
                   username: ${{ secrets.SERVER_USERNAME }}
                   key: ${{ secrets.SERVER_SSH_KEY }}
                   source: 'dist/'
-                  target: '/war/www/'
+                  target: '/var/www/'
 
             - name: SSH into Server
               uses: appleboy/ssh-action@master
