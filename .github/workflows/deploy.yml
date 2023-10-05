@@ -1,0 +1,37 @@
+name: Deploy to Ubuntu Server
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v2
+
+            - name: Install Dependencies and Build
+              run: |
+                  npm install
+                  npm run build
+
+            - name: Copy files to Server
+              uses: appleboy/scp-action@master
+              with:
+                  host: ${{ secrets.SERVER_IP }}
+                  username: ${{ secrets.SERVER_USERNAME }}
+                  key: ${{ secrets.SERVER_SSH_KEY }}
+                  source: 'dist/'
+                  target: '/war/www/'
+
+            - name: SSH into Server
+              uses: appleboy/ssh-action@master
+              with:
+                  host: ${{ secrets.SERVER_IP }}
+                  username: ${{ secrets.SERVER_USERNAME }}
+                  key: ${{ secrets.SERVER_SSH_KEY }}
+                  script: |
+                      service nginx restart
